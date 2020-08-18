@@ -5,7 +5,7 @@ import { ListGroup, ListGroupItem } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const Popup = () => {
-  const handleClick = event => console.log(event);
+  const handleClick = (event) => console.log(event);
   return (
     <div style={{ width: 300 }}>
       <ListGroup>
