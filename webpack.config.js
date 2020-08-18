@@ -9,19 +9,19 @@ module.exports = {
     options: './src/options.js',
     popup: './src/popup.js',
     content: './src/content.js',
-    background: './src/background.js',
+    background: './src/background.js'
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'build')
   },
   resolve: {
     extensions: ['.js', '.jsx', '.css'],
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     alias: {
       react: 'preact/compat',
-      'react-dom': 'preact/compat',
-    },
+      'react-dom': 'preact/compat'
+    }
   },
   module: {
     rules: [
@@ -30,42 +30,42 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: 'babel-loader',
-          },
-        ],
+            loader: 'babel-loader'
+          }
+        ]
       },
       {
         test: /\.svg$/,
-        use: ['@svgr/webpack'],
+        use: ['@svgr/webpack']
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
-    ],
+        use: ['style-loader', 'css-loader']
+      }
+    ]
   },
   plugins: [
     new HTMLPlugin({
       chunks: ['options'],
       filename: 'options.html',
-      title: 'Options page title',
+      title: 'Options page title'
     }),
     new HTMLPlugin({
       chunks: ['popup'],
-      filename: 'popup.html',
+      filename: 'popup.html'
     }),
     new CopyPlugin([
       { from: './src/assets', to: './assets' },
-      { from: './src/manifest.json', to: './manifest.json' },
+      { from: './src/manifest.json', to: './manifest.json' }
     ]),
     new ExtensionReloader({
-      manifest: path.resolve(__dirname, './src/manifest.json'),
+      manifest: path.resolve(__dirname, './src/manifest.json')
     }),
-    new ManifestVersionSyncPlugin(),
+    new ManifestVersionSyncPlugin()
   ],
   optimization: {
-    minimize: true,
+    minimize: true
   },
   mode: 'production',
-  stats: 'minimal',
+  stats: 'minimal'
 };
