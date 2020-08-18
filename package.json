@@ -42,7 +42,6 @@
   },
   "dependencies": {
     "bootstrap": "^4.5.2",
-    "classnames": "^2.2.6",
     "core-js": "^3.3.3",
     "preact": "^10.0.1",
     "preact-shadow-root": "^1.0.2",
@@ -50,8 +49,6 @@
     "react-switch": "^5.0.1",
     "reactstrap": "^8.5.1",
     "regenerator-runtime": "^0.13.3",
-    "styled-components": "^4.4.0",
-    "use-click-outside": "^1.1.0",
     "webextension-polyfill": "^0.5.0"
   },
   "eslintConfig": {
