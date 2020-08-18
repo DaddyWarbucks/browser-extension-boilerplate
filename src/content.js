@@ -5,8 +5,7 @@ import { ListGroup, ListGroupItem } from 'reactstrap';
 // import "bootstrap/dist/css/bootstrap.css";
 
 const Content = () => {
-  const handleClick = event => console.log(event);
-  console.log('Im from the main app!', window);
+  const handleClick = (event) => console.log(event);
   return (
     <div
       className="bg-light"
