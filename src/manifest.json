@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
   "version": "1.0.0",
-  "name": "__MSG_appName__",
-  "short_name": "__MSG_appShortName__",
-  "description": "__MSG_appDesc__",
+  "name": "Extension Boilerplate",
+  "short_name": "Extension Boilerplate",
+  "description": "A really cool extension",
   "default_locale": "en",
   "options_ui": {
     "page": "options.html"
@@ -26,7 +26,7 @@
     "48": "assets/img/icon-48x48.png",
     "128": "assets/img/icon-128x128.png"
   },
-  "permissions": ["storage"],
+  "permissions": ["storage", "tabs"],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'; connect-src ws://localhost:*/",
   "web_accessible_resources": ["assets/img/*"]
 }

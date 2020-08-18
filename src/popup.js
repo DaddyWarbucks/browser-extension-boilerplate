@@ -1,18 +1,23 @@
-import 'libs/polyfills';
+import './lib/polyfills';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ThemeProvider } from 'styled-components';
-import Box from 'components/Box';
-import Example from 'components/Example';
-import defaultTheme from 'themes/default';
+import { ListGroup, ListGroupItem } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const Popup = () => {
+  const handleClick = event => console.log(event);
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Box width="200px" padding={3}>
-        <Example />
-      </Box>
-    </ThemeProvider>
+    <div style={{ width: 300 }}>
+      <ListGroup>
+        <ListGroupItem tag="button" action onClick={handleClick}>
+          <p className="mb-1 font-weight-bold lead">Do a thing</p>
+          <p className="mb-0">
+            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
+            eget risus varius blandit.
+          </p>
+        </ListGroupItem>
+      </ListGroup>
+    </div>
   );
 };
 

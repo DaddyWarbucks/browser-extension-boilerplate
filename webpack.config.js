@@ -38,6 +38,10 @@ module.exports = {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
       },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
   plugins: [
@@ -51,7 +55,6 @@ module.exports = {
       filename: 'popup.html',
     }),
     new CopyPlugin([
-      { from: './src/_locales/', to: './_locales' },
       { from: './src/assets', to: './assets' },
       { from: './src/manifest.json', to: './manifest.json' },
     ]),

@@ -1,36 +1,31 @@
-import 'libs/polyfills';
+import './lib/polyfills';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ThemeProvider, StyleSheetManager } from 'styled-components';
-import Box from 'components/Box';
-import Example from 'components/Example';
-import defaultTheme from 'themes/default';
+import { ListGroup, ListGroupItem } from 'reactstrap';
+// import "bootstrap/dist/css/bootstrap.css";
 
-const root = document.createElement('div');
-const shadow = root.attachShadow({ mode: 'open' });
-
-const styleContainer = document.createElement('div');
-const appContainer = document.createElement('div');
-
-shadow.appendChild(styleContainer);
-shadow.appendChild(appContainer);
-
-document.body.appendChild(root);
-
-const App = () => {
+const Content = () => {
+  const handleClick = event => console.log(event);
+  console.log('Im from the main app!', window);
   return (
-    <StyleSheetManager target={styleContainer}>
-      <ThemeProvider theme={defaultTheme}>
-        <Box
-          position="fixed"
-          bottom={3}
-          right={3}
-        >
-          <Example />
-        </Box>
-      </ThemeProvider>
-    </StyleSheetManager>
+    <div
+      className="bg-light"
+      style={{ width: 300, position: 'absolute', bottom: 0, right: 0 }}
+    >
+      <ListGroup>
+        <ListGroupItem tag="button" action onClick={handleClick}>
+          <p className="mb-1 font-weight-bold lead">Do a thing</p>
+          <p className="mb-0">
+            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
+            eget risus varius blandit.
+          </p>
+        </ListGroupItem>
+      </ListGroup>
+    </div>
   );
 };
 
-ReactDOM.render(<App />, appContainer);
+const root = document.createElement('div');
+document.body.appendChild(root);
+
+ReactDOM.render(<Content />, root);
