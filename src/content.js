@@ -2,7 +2,7 @@ import './lib/polyfills';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ListGroup, ListGroupItem } from 'reactstrap';
-// import "bootstrap/dist/css/bootstrap.css";
+// import 'bootstrap/dist/css/bootstrap.css';
 
 const Content = () => {
   const handleClick = (event) => console.log(event);
@@ -25,6 +25,21 @@ const Content = () => {
 };
 
 const root = document.createElement('div');
-document.body.appendChild(root);
+const shadow = root.attachShadow({ mode: 'open' });
+
+const appContainer = document.createElement('div');
+
+const style = document.createElement('link');
+style.setAttribute('rel', 'stylesheet');
+style.setAttribute('type', 'text/css');
+style.setAttribute(
+  'href',
+  'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'
+);
+
+shadow.appendChild(style);
+shadow.appendChild(appContainer);
+
+document.body.appendChild(appContainer);
 
 ReactDOM.render(<Content />, root);
