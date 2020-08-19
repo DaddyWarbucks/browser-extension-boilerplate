@@ -1,9 +1,9 @@
 {
   "version": "1.0.1",
-  "name": "react-browser-extension-boilerplate",
+  "name": "browser-extension-boilerplate",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ElForastero/react-browser-extension-boilerplate"
+    "url": "https://github.com/DaddyWarbucks/browser-extension-boilerplate"
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production yarn webpack -c webpack.config.js --mode production",
